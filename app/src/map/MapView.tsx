@@ -6,7 +6,7 @@ import type { Country } from "../catalog/types";
 import { BORDER_COLOR, GROUP_COLORS, SEA_COLOR, SELECTED_COLOR, cssColor, type RGB } from "./colors";
 import { FLAT_WIDTH, projectCountries, type FlatCountry } from "./project";
 
-export const GLOBE_ENABLED = true;
+export { GLOBE_ENABLED } from "./flags";
 export const SMALL_COUNTRY_SIZE = 8; // flat units
 const SMALL_COUNTRY_RADIUS_PX = 14;
 
@@ -46,25 +46,31 @@ function lngLatCentre(country: Country): [number, number] {
   return [(minX + maxX) / 2, (minY + maxY) / 2];
 }
 
-function useContainerWidth(): [React.RefObject<HTMLDivElement | null>, number] {
+function useContainerSize(): [React.RefObject<HTMLDivElement | null>, { width: number; height: number }] {
   const ref = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(0);
+  const [size, setSize] = useState({ width: 0, height: 0 });
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
-    setWidth(element.clientWidth);
+    setSize({ width: element.clientWidth, height: element.clientHeight });
     if (typeof ResizeObserver === "undefined") return;
     const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) setWidth(entry.contentRect.width);
+      for (const entry of entries) setSize({ width: entry.contentRect.width, height: entry.contentRect.height });
     });
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
-  return [ref, width];
+  return [ref, size];
+}
+
+/** deck.gl draws the globe with a radius of 512 * 2^zoom / 2π pixels; fit it to 90% of the shorter side. */
+function globeFitZoom(width: number, height: number): number {
+  const radius = 0.45 * Math.min(width, height);
+  return Math.log2((radius * 2 * Math.PI) / 512);
 }
 
 export function MapView({ countries, groups, selected, view, onPick, onGlobeFailed }: MapViewProps) {
-  const [containerRef, width] = useContainerWidth();
+  const [containerRef, { width, height }] = useContainerSize();
   const globeFailed = useRef(false);
 
   const projected = useMemo(() => projectCountries(countries), [countries]);
@@ -96,7 +102,11 @@ export function MapView({ countries, groups, selected, view, onPick, onGlobeFail
     }),
     [fitZoom, projected.height],
   );
-  const globeViewState = useMemo(() => ({ longitude: 20, latitude: 20, zoom: 0, minZoom: -0.5, maxZoom: 4 }), []);
+  const globeZoom = width > 0 && height > 0 ? globeFitZoom(width, height) : 0;
+  const globeViewState = useMemo(
+    () => ({ longitude: 20, latitude: 20, zoom: globeZoom, minZoom: globeZoom - 0.5, maxZoom: globeZoom + 4 }),
+    [globeZoom],
+  );
 
   const fill = (code: string): [number, number, number, number] => withAlpha(GROUP_COLORS[groups[code] ?? 0], 255);
   const pick = (info: PickingInfo) => {

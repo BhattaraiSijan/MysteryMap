@@ -53,7 +53,7 @@ export const fixtureCatalog: Catalog = {
   version: 1,
   layers: [
     layer("beds", 1, "Hospital beds", "Beds per 1,000 people", "A count for every 1,000 people.", ["age", "rain", "cars", "fish", "rail"],
-      values({ JPN: 13.05, MLI: 0.1, FRA: 5.9, BRA: 2.1, IND: 0.5, AUS: 3.8, GRL: 14.0, COD: 0.8, FJI: 2.0 })),
+      values({ JPN: 13.05, MLI: 0.1, FRA: 5.9, BRA: 2.1, IND: 0.5, AUS: 3.8, GRL: 2.5, COD: 0.8, FJI: 2.0 })),
     layer("age", 2, "Median age", "Median age of the population in years", "Years of age.", ["beds", "rain", "cars", "fish", "cold"],
       values({ JPN: 48.2, MLI: 16.4, PSE: 20.4, FRA: 42, BRA: 33.5, IND: 28.4, AUS: 37.9, GRL: 34.3, COD: 17, FJI: 28.6 })),
     layer("rain", 3, "Rainfall", "Average yearly rainfall in millimetres", "Millimetres of water a year.", ["beds", "age", "cars", "rail", "cold"],

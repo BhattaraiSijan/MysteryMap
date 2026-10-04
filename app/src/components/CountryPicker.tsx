@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 export type CountryPickerProps = {
   names: { code: string; name: string }[];
@@ -14,6 +14,13 @@ export function CountryPicker({ names, onPick }: CountryPickerProps) {
   const [active, setActive] = useState(0);
   const inputId = useId();
   const listId = useId();
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = null;
+  };
+  useEffect(() => cancelClose, []);
 
   const query = text.trim().toLowerCase();
   const matches = query
@@ -24,6 +31,7 @@ export function CountryPicker({ names, onPick }: CountryPickerProps) {
     : [];
 
   const choose = (code: string) => {
+    cancelClose();
     onPick(code);
     setText("");
     setOpen(false);
@@ -45,12 +53,19 @@ export function CountryPicker({ names, onPick }: CountryPickerProps) {
         value={text}
         placeholder="Type a country name"
         onChange={(e) => {
+          cancelClose();
           setText(e.target.value);
           setOpen(true);
           setActive(0);
         }}
-        onFocus={() => setOpen(true)}
-        onBlur={() => setTimeout(() => setOpen(false), 150)}
+        onFocus={() => {
+          cancelClose();
+          setOpen(true);
+        }}
+        onBlur={() => {
+          cancelClose();
+          closeTimer.current = setTimeout(() => setOpen(false), 150);
+        }}
         onKeyDown={(e) => {
           if (e.key === "ArrowDown") {
             e.preventDefault();
