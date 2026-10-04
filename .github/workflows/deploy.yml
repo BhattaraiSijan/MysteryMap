@@ -5,10 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Publishes to the gh-pages branch. GitHub serves that branch as the Pages site
+# without any API call the workflow token is not allowed to make.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -39,19 +39,10 @@ jobs:
         working-directory: app
       - run: npm run build
         working-directory: app
-      - uses: actions/configure-pages@v5
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          enablement: true
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: app/dist
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: app/dist
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "deploy: ${{ github.sha }}"
