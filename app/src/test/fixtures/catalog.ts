@@ -1,8 +1,8 @@
 import type { Catalog, Layer } from "../../catalog/types";
 
-const CODES = ["JPN", "MLI", "PSE", "FRA", "BRA", "IND", "AUS", "GRL", "COD", "FJI"] as const;
+type Code = "JPN" | "MLI" | "PSE" | "FRA" | "BRA" | "IND" | "AUS" | "GRL" | "COD" | "FJI";
 
-function values(entries: Partial<Record<(typeof CODES)[number], number>>): Record<string, number> {
+function values(entries: Partial<Record<Code, number>>): Record<string, number> {
   return Object.fromEntries(Object.entries(entries));
 }
 
