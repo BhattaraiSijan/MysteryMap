@@ -1,0 +1,19 @@
+id: income-per-person
+name: Income per person
+definition: Output of the economy per person, adjusted for prices (international dollars)
+unit: Dollars a person a year, adjusted for local prices.
+year: "2017"
+family: economy
+status: live
+explanation: >
+  Qatar, Luxembourg and Singapore produce more than $85,000 per person once prices are adjusted.
+  The Central African Republic, Burundi, Liberia and the Democratic Republic of the Congo are
+  below $1,000. Western Europe, North America, Australia and the Gulf fill the top groups, while
+  most of sub-Saharan Africa fills the lowest.
+source:
+  name: Our World in Data
+  url: https://github.com/owid/covid-19-data
+  licence: CC BY 4.0
+  path: owid-covid-latest.csv
+  iso_column: iso_code
+  value_column: gdp_per_capita

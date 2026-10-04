@@ -9,3 +9,4 @@ app/test-results/
 app/playwright-report/
 pipeline/preview/
 .DS_Store
+pipeline/sources/

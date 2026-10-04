@@ -1,0 +1,19 @@
+id: heart-deaths
+name: Deaths from heart disease
+definition: Yearly deaths from heart and circulatory disease per 100,000 people
+unit: A count of deaths a year for every 100,000 people.
+year: "2017"
+family: health
+status: live
+explanation: >
+  Uzbekistan, Afghanistan, Papua New Guinea and Azerbaijan lose more than 550 people per 100,000
+  each year to heart and circulatory disease. Japan, Peru, South Korea and France are below 90.
+  Diet, smoking, treatment of blood pressure and the age of the population all shape the pattern,
+  so Eastern Europe and Central Asia stand out as high.
+source:
+  name: Our World in Data
+  url: https://github.com/owid/covid-19-data
+  licence: CC BY 4.0
+  path: owid-covid-latest.csv
+  iso_column: iso_code
+  value_column: cardiovasc_death_rate

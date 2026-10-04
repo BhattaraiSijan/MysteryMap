@@ -1,0 +1,20 @@
+id: coal-electricity
+name: Coal electricity
+definition: Share of electricity from coal
+unit: A percentage of electricity generated.
+year: "2022"
+family: electricity-mix
+status: live
+explanation: >
+  Botswana, Mongolia, South Africa and India burn coal for more than 70% of their electricity, and
+  Poland, China and Kazakhstan are also high. Countries with big rivers, gas fields or no coal of
+  their own have none. The pattern follows where coal is dug up more than how rich a country is.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: coal_share_elec
+  year_column: year
+  year: 2022

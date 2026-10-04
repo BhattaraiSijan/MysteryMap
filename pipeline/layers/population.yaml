@@ -1,0 +1,18 @@
+id: population
+name: Population
+definition: Number of people living in the country
+unit: A count of people.
+year: "2022"
+family: people
+status: live
+explanation: >
+  China and India each have more than 1.4 billion people, and together they hold about a third of
+  humanity. The United States, Indonesia, Pakistan and Nigeria follow, each above 200 million. The
+  smallest populations are tiny islands and city states such as Pitcairn, the Vatican and Niue.
+source:
+  name: Our World in Data
+  url: https://github.com/owid/covid-19-data
+  licence: CC BY 4.0
+  path: owid-covid-latest.csv
+  iso_column: iso_code
+  value_column: population

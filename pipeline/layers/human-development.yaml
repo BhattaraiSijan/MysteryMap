@@ -1,0 +1,18 @@
+id: human-development
+name: Human development
+definition: Index combining life expectancy, schooling and income, from 0 to 1
+unit: A score between 0 and 1.
+year: "2019"
+family: economy
+status: live
+explanation: >
+  Norway, Switzerland, Ireland and Iceland top the index at about 0.95, combining long lives, long
+  schooling and high incomes. Niger, the Central African Republic and Chad sit near 0.40. Because
+  the index blends health, schooling and income, it looks like a map of wealth but is smoother.
+source:
+  name: Our World in Data
+  url: https://github.com/owid/covid-19-data
+  licence: CC BY 4.0
+  path: owid-covid-latest.csv
+  iso_column: iso_code
+  value_column: human_development_index

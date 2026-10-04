@@ -1,0 +1,20 @@
+id: nuclear-electricity
+name: Nuclear electricity
+definition: Share of electricity from nuclear power
+unit: A percentage of electricity generated.
+year: "2022"
+family: electricity-mix
+status: live
+explanation: >
+  France gets more than 60% of its electricity from nuclear plants, and Slovakia, Ukraine, Belgium
+  and Hungary more than 40%. Only about 30 countries have any nuclear power, so most of the map
+  shows zero. The top groups are concentrated in Europe, North America and East Asia.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: nuclear_share_elec
+  year_column: year
+  year: 2022

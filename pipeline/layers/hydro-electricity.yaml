@@ -1,0 +1,20 @@
+id: hydro-electricity
+name: Hydro electricity
+definition: Share of electricity from hydropower
+unit: A percentage of electricity generated.
+year: "2022"
+family: electricity-mix
+status: live
+explanation: >
+  Lesotho, Bhutan, Paraguay, Nepal and Albania draw nearly all their electricity from dams. Flat,
+  dry or small countries, including most islands and the Gulf, have none. The pattern follows
+  mountains and big rivers more than wealth.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: hydro_share_elec
+  year_column: year
+  year: 2022

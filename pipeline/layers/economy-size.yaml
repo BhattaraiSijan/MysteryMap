@@ -1,0 +1,20 @@
+id: economy-size
+name: Size of the economy
+definition: Total yearly output of the economy in current US dollars
+unit: Dollars a year.
+year: "2022"
+family: economy
+status: live
+explanation: >
+  The United States and China produce far more than anyone else, at about $26 trillion and $18
+  trillion. Japan, Germany, India and the United Kingdom come next at $3 to 4 trillion each. The
+  smallest economies are Pacific islands such as Tuvalu, Nauru and Palau, each under $300 million.
+source:
+  name: World Bank via datasets/gdp
+  url: https://github.com/datasets/gdp
+  licence: CC BY 4.0
+  path: worldbank-gdp.csv
+  iso_column: iso_code
+  value_column: value
+  year_column: year
+  year: 2022

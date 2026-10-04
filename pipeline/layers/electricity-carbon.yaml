@@ -1,0 +1,21 @@
+id: electricity-carbon
+name: Carbon per unit of electricity
+definition: Grams of carbon dioxide released per kilowatt-hour of electricity
+unit: Grams of carbon dioxide for every kilowatt-hour.
+year: "2022"
+family: electricity-mix
+status: live
+explanation: >
+  Turkmenistan and Uzbekistan, which burn gas inefficiently, and small islands running on diesel
+  release around 1,000 grams per kilowatt-hour. Hydro and nuclear countries such as Nepal,
+  Ethiopia, Costa Rica, Bhutan, Norway and France are below 60. The map is a mirror of how much
+  coal, oil and gas go into the grid.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: carbon_intensity_elec
+  year_column: year
+  year: 2022

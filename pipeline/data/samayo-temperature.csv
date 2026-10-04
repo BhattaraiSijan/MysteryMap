@@ -1,0 +1,225 @@
+iso_code,country,temperature
+AFG,Afghanistan,13.37
+ALB,Albania,12.44
+DZA,Algeria,23.6
+ASM,American Samoa,27.38
+AND,Andorra,8.27
+AGO,Angola,21.77
+AIA,Anguilla,27.71
+ATG,Antigua and Barbuda,27.2
+ARG,Argentina,15.11
+ARM,Armenia,7.82
+ABW,Aruba,29.17
+AUS,Australia,22.05
+AUT,Austria,7.44
+AZE,Azerbaijan,12.96
+BHS,Bahamas,25.58
+BHR,Bahrain,27.69
+BGD,Bangladesh,25.71
+BRB,Barbados,26.61
+BLR,Belarus,7.45
+BEL,Belgium,10.67
+BLZ,Belize,25.7
+BEN,Benin,28.02
+BMU,Bermuda,21.67
+BTN,Bhutan,10.38
+BOL,Bolivia,20.76
+BIH,Bosnia and Herzegovina,10.35
+BWA,Botswana,22.09
+BRA,Brazil,25.44
+IOT,British Indian Ocean Territory,27.61
+BRN,Brunei,26.95
+BGR,Bulgaria,11.35
+BFA,Burkina Faso,29.26
+BDI,Burundi,20.51
+KHM,Cambodia,27.41
+CMR,Cameroon,24.8
+CAN,Canada,-4.03
+CPV,Cape Verde,22.53
+CYM,Cayman Islands,27.82
+CAF,Central African Republic,25.47
+TCD,Chad,27.63
+CHL,Chile,9.39
+CHN,China,7.59
+CXR,Christmas Island,26.06
+CCK,Cocos (Keeling) Islands,26.79
+COL,Colombia,25
+COM,Comoros,23.73
+COG,Congo,24.74
+COK,Cook Islands,24.71
+CRI,Costa Rica,24.83
+HRV,Croatia,11.96
+CUB,Cuba,25.81
+CYP,Cyprus,18.95
+CZE,Czech Republic,8.6
+DNK,Denmark,8.9
+DJI,Djibouti,28.49
+DMA,Dominica,26.83
+DOM,Dominican Republic,24.55
+ECU,Ecuador,21.43
+EGY,Egypt,23.14
+SLV,El Salvador,25.23
+GNQ,Equatorial Guinea,24.66
+ERI,Eritrea,26.63
+EST,Estonia,6.34
+SWZ,Eswatini,20.64
+ETH,Ethiopia,23.37
+FRO,Faroe Islands,6.6
+FJI,Fiji Islands,24.68
+FIN,Finland,2.46
+FRA,France,11.65
+PYF,French Polynesia,24.3
+ATF,French Southern territories,4.11
+GAB,Gabon,25.2
+GMB,Gambia,28.38
+GEO,Georgia,9.01
+DEU,Germany,9.59
+GHA,Ghana,27.66
+GIB,Gibraltar,18.15
+GRC,Greece,14.26
+GRL,Greenland,-18.68
+GRD,Grenada,26.49
+GUM,Guam,27.81
+GTM,Guatemala,23.65
+GIN,Guinea,25.86
+GNB,Guinea-Bissau,27.98
+GUY,Guyana,26.12
+HTI,Haiti,24.95
+HMD,Heard Island and McDonald Islands,2.46
+VAT,Holy See (Vatican City State),16.34
+HND,Honduras,24.72
+HUN,Hungary,11.5
+ISL,Iceland,1.85
+IND,India,24.94
+IDN,Indonesia,25.96
+IRN,Iran,18.34
+IRQ,Iraq,22.95
+IRL,Ireland,9.73
+ISR,Israel,19.99
+ITA,Italy,13.22
+CIV,Ivory Coast,26.8
+JAM,Jamaica,25.91
+JPN,Japan,11.78
+JOR,Jordan,19.52
+KAZ,Kazakhstan,7.11
+KEN,Kenya,25.08
+KIR,Kiribati,27.77
+KWT,Kuwait,26.31
+KGZ,Kyrgyzstan,2.65
+LAO,Laos,24.16
+LVA,Latvia,6.87
+LBN,Lebanon,15.45
+LSO,Lesotho,12.38
+LBR,Liberia,25.45
+LBY,Libya,22.81
+LIE,Liechtenstein,7.55
+LTU,Lithuania,7.38
+LUX,Luxembourg,10.02
+MKD,North Macedonia,10.79
+MDG,Madagascar,22.64
+MWI,Malawi,22.66
+MYS,Malaysia,26.38
+MDV,Maldives,28.11
+MLI,Mali,29.21
+MLT,Malta,19.58
+MHL,Marshall Islands,28.01
+MRT,Mauritania,28.82
+MUS,Mauritius,23.33
+MEX,Mexico,21.31
+FSM,"Micronesia, Federated States of",27.28
+MDA,Moldova,10.89
+MCO,Monaco,13.53
+MNG,Mongolia,1.07
+MSR,Montserrat,25.75
+MAR,Morocco,18.14
+MOZ,Mozambique,24.41
+MMR,Myanmar,23.82
+NAM,Namibia,20.45
+NRU,Nauru,27.83
+NPL,Nepal,14.17
+NLD,Netherlands,10.49
+NCL,New Caledonia,22.69
+NZL,New Zealand,10.46
+NIC,Nicaragua,25.88
+NER,Niger,28.04
+NGA,Nigeria,27.3
+NIU,Niue,25.03
+NFK,Norfolk Island,19.01
+PRK,North Korea,6.98
+MNP,Northern Mariana Islands,27.6
+NOR,Norway,2.21
+OMN,Oman,27.64
+PAK,Pakistan,21.38
+PLW,Palau,27.9
+PSE,Palestine,19.5
+PAN,Panama,25.6
+PNG,Papua New Guinea,24.74
+PRY,Paraguay,23.92
+PER,Peru,19.72
+PHL,Philippines,26.27
+PCN,Pitcairn,20.56
+POL,Poland,8.78
+PRT,Portugal,15.85
+PRI,Puerto Rico,25.04
+QAT,Qatar,28.02
+ROU,Romania,10.18
+RUS,Russia,-3.79
+RWA,Rwanda,19.2
+SHN,Saint Helena,18.1
+KNA,Saint Kitts and Nevis,27.47
+LCA,Saint Lucia,27
+SPM,Saint Pierre and Miquelon,5.72
+VCT,Saint Vincent and the Grenadines,26.17
+WSM,Samoa,27.58
+SMR,San Marino,12.83
+STP,Sao Tome and Principe,24.49
+SAU,Saudi Arabia,25.94
+SEN,Senegal,28.9
+SRB,Serbia,11.4
+SYC,Seychelles,27.09
+SLE,Sierra Leone,26.54
+SGP,Singapore,27.68
+SVK,Slovakia,8.83
+SVN,Slovenia,9.86
+SLB,Solomon Islands,25.92
+SOM,Somalia,26.95
+ZAF,South Africa,18.23
+KOR,South Korea,12.22
+SSD,South Sudan,27.97
+ESP,Spain,14.07
+LKA,Sri Lanka,27.25
+SDN,Sudan,27.95
+SUR,Suriname,26.58
+SJM,Svalbard and Jan Mayen,-6.78
+SWE,Sweden,3.23
+CHE,Switzerland,6.47
+SYR,Syria,18.75
+TJK,Tajikistan,3.85
+TZA,Tanzania,22.92
+THA,Thailand,26.85
+COD,The Democratic Republic of Congo,24.35
+TGO,Togo,27.33
+TKL,Tokelau,28.71
+TON,Tonga,25.01
+TTO,Trinidad and Tobago,26.55
+TUN,Tunisia,20.53
+TUR,Turkey,11.66
+TKM,Turkmenistan,16.66
+TCA,Turks and Caicos Islands,26.29
+TUV,Tuvalu,28.62
+UGA,Uganda,23.25
+UKR,Ukraine,9.27
+ARE,United Arab Emirates,28.17
+USA,United States,9.46
+UMI,United States Minor Outlying Islands,24.97
+URY,Uruguay,17.97
+UZB,Uzbekistan,13.69
+VUT,Vanuatu,24.44
+VEN,Venezuela,25.71
+VNM,Vietnam,24.79
+VGB,"Virgin Islands, British",26.7
+VIR,"Virgin Islands, U.S.",26.98
+WLF,Wallis and Futuna,27.3
+YEM,Yemen,25.54
+ZMB,Zambia,22.23
+ZWE,Zimbabwe,21.9

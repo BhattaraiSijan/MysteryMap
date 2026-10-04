@@ -1,0 +1,20 @@
+id: wind-electricity
+name: Wind electricity
+definition: Share of electricity from wind power
+unit: A percentage of electricity generated.
+year: "2022"
+family: electricity-mix
+status: live
+explanation: >
+  Denmark gets more than half of its electricity from wind, and Lithuania, Ireland, Uruguay and
+  Portugal more than a quarter. Windy coasts facing the Atlantic and the North Sea dominate the
+  top group. Most of Africa, the Middle East and the Pacific have little or none.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: wind_share_elec
+  year_column: year
+  year: 2022

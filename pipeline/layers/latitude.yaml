@@ -1,0 +1,18 @@
+id: latitude
+name: Latitude
+definition: Latitude of the centre of the country, in degrees north; negative is south
+unit: Degrees of latitude. Negative numbers are south of the equator.
+year: "2023"
+family: geography
+status: live
+explanation: >
+  Greenland, Iceland and the Nordic countries are centred above 60 degrees north. New Zealand,
+  Argentina, Chile and South Africa are the furthest south among large countries. Because most
+  land is in the northern hemisphere, only a quarter of countries have a negative value.
+source:
+  name: mledoze/countries
+  url: https://github.com/mledoze/countries
+  licence: ODbL 1.0
+  path: country-facts.csv
+  iso_column: iso_code
+  value_column: latitude

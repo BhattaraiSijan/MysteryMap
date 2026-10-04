@@ -1,0 +1,192 @@
+iso_code,country,independence
+AFG,Afghanistan,1919
+ALB,Albania,1912
+DZA,Algeria,1962
+AND,Andorra,1278
+AGO,Angola,1975
+ATG,Antigua and Barbuda,1981
+ARG,Argentina,1816
+ARM,Armenia,1991
+AUS,Australia,1901
+AUT,Austria,1918
+AZE,Azerbaijan,1991
+BHS,Bahamas,1973
+BHR,Bahrain,1971
+BGD,Bangladesh,1971
+BRB,Barbados,1966
+BLR,Belarus,1991
+BEL,Belgium,1830
+BLZ,Belize,1981
+BEN,Benin,1960
+BTN,Bhutan,1910
+BOL,Bolivia,1825
+BIH,Bosnia and Herzegovina,1992
+BWA,Botswana,1966
+BRA,Brazil,1822
+BRN,Brunei,1984
+BGR,Bulgaria,1908
+BFA,Burkina Faso,1960
+BDI,Burundi,1962
+KHM,Cambodia,1953
+CMR,Cameroon,1960
+CAN,Canada,1867
+CPV,Cape Verde,1975
+CAF,Central African Republic,1960
+TCD,Chad,1960
+CHL,Chile,1810
+CHN,China,-1523
+COL,Colombia,1810
+COM,Comoros,1975
+COG,Congo,1960
+CRI,Costa Rica,1821
+HRV,Croatia,1991
+CUB,Cuba,1902
+CYP,Cyprus,1960
+CZE,Czech Republic,1993
+DNK,Denmark,800
+DJI,Djibouti,1977
+DMA,Dominica,1978
+DOM,Dominican Republic,1844
+ECU,Ecuador,1822
+EGY,Egypt,1922
+SLV,El Salvador,1841
+GNQ,Equatorial Guinea,1968
+ERI,Eritrea,1993
+EST,Estonia,1991
+SWZ,Eswatini,1968
+ETH,Ethiopia,-1000
+FJI,Fiji Islands,1970
+FIN,Finland,1917
+FRA,France,843
+GAB,Gabon,1960
+GMB,Gambia,1965
+GEO,Georgia,1991
+DEU,Germany,1955
+GHA,Ghana,1957
+GRC,Greece,1830
+GRD,Grenada,1974
+GTM,Guatemala,1821
+GIN,Guinea,1958
+GNB,Guinea-Bissau,1974
+GUY,Guyana,1966
+HTI,Haiti,1804
+VAT,Holy See (Vatican City State),1929
+HND,Honduras,1838
+HUN,Hungary,1918
+ISL,Iceland,1944
+IND,India,1947
+IDN,Indonesia,1945
+IRN,Iran,1906
+IRQ,Iraq,1932
+IRL,Ireland,1921
+ISR,Israel,1948
+ITA,Italy,1861
+CIV,Ivory Coast,1960
+JAM,Jamaica,1962
+JPN,Japan,-660
+JOR,Jordan,1946
+KAZ,Kazakhstan,1991
+KEN,Kenya,1963
+KIR,Kiribati,1979
+KWT,Kuwait,1961
+KGZ,Kyrgyzstan,1991
+LAO,Laos,1953
+LVA,Latvia,1991
+LBN,Lebanon,1941
+LSO,Lesotho,1966
+LBR,Liberia,1847
+LBY,Libya,1951
+LIE,Liechtenstein,1806
+LTU,Lithuania,1991
+LUX,Luxembourg,1867
+MKD,North Macedonia,1991
+MDG,Madagascar,1960
+MWI,Malawi,1964
+MYS,Malaysia,1957
+MDV,Maldives,1965
+MLI,Mali,1960
+MLT,Malta,1964
+MHL,Marshall Islands,1990
+MRT,Mauritania,1960
+MUS,Mauritius,1968
+MEX,Mexico,1810
+FSM,"Micronesia, Federated States of",1990
+MDA,Moldova,1991
+MCO,Monaco,1861
+MNG,Mongolia,1921
+MNE,Montenegro,2006
+MAR,Morocco,1956
+MOZ,Mozambique,1975
+MMR,Myanmar,1948
+NAM,Namibia,1990
+NRU,Nauru,1968
+NPL,Nepal,1923
+NLD,Netherlands,1581
+NZL,New Zealand,1907
+NIC,Nicaragua,1838
+NER,Niger,1960
+NGA,Nigeria,1960
+PRK,North Korea,1948
+NOR,Norway,1905
+OMN,Oman,1951
+PAK,Pakistan,1947
+PLW,Palau,1994
+PAN,Panama,1903
+PNG,Papua New Guinea,1975
+PRY,Paraguay,1811
+PER,Peru,1821
+PHL,Philippines,1946
+POL,Poland,1918
+PRT,Portugal,1143
+QAT,Qatar,1971
+ROU,Romania,1878
+RUS,Russia,1991
+RWA,Rwanda,1962
+KNA,Saint Kitts and Nevis,1983
+LCA,Saint Lucia,1979
+VCT,Saint Vincent and the Grenadines,1979
+WSM,Samoa,1962
+SMR,San Marino,885
+STP,Sao Tome and Principe,1975
+SAU,Saudi Arabia,1932
+SEN,Senegal,1960
+SRB,Serbia,2006
+SYC,Seychelles,1976
+SLE,Sierra Leone,1961
+SGP,Singapore,1965
+SVK,Slovakia,1993
+SVN,Slovenia,1991
+SLB,Solomon Islands,1978
+SOM,Somalia,1960
+ZAF,South Africa,1910
+KOR,South Korea,1948
+SSD,South Sudan,2011
+ESP,Spain,1492
+SDN,Sudan,1956
+SUR,Suriname,1975
+SWE,Sweden,836
+CHE,Switzerland,1499
+SYR,Syria,1941
+TJK,Tajikistan,1991
+TZA,Tanzania,1961
+THA,Thailand,1350
+COD,The Democratic Republic of Congo,1960
+TGO,Togo,1960
+TON,Tonga,1970
+TTO,Trinidad and Tobago,1962
+TUN,Tunisia,1956
+TUR,Turkey,1923
+TKM,Turkmenistan,1991
+TUV,Tuvalu,1978
+UGA,Uganda,1962
+UKR,Ukraine,1991
+ARE,United Arab Emirates,1971
+USA,United States,1776
+URY,Uruguay,1828
+UZB,Uzbekistan,1991
+VUT,Vanuatu,1980
+VEN,Venezuela,1811
+VNM,Vietnam,1945
+YEM,Yemen,1918
+ZMB,Zambia,1964
+ZWE,Zimbabwe,1980

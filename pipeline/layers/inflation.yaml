@@ -1,0 +1,21 @@
+id: inflation
+name: Inflation
+definition: Yearly rise in consumer prices
+unit: A percentage change in prices over one year.
+year: "2022"
+family: economy
+status: live
+explanation: >
+  In 2022 Zimbabwe's prices rose by more than 250%, and Sudan, Lebanon, Syria, Turkey and
+  Argentina all saw rises of 70% or more. Most of the world saw 5 to 10% as energy and food prices
+  jumped after the pandemic. A handful of small states such as Nauru and Liechtenstein recorded
+  falling prices.
+source:
+  name: World Bank via datasets/inflation
+  url: https://github.com/datasets/inflation
+  licence: CC BY 4.0
+  path: worldbank-inflation.csv
+  iso_column: iso_code
+  value_column: value
+  year_column: year
+  year: 2022

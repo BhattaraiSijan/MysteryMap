@@ -1,0 +1,18 @@
+id: average-temperature
+name: Average temperature
+definition: Average yearly air temperature across the country
+unit: Degrees Celsius.
+year: "1961 to 1990"
+family: climate
+status: live
+explanation: >
+  Burkina Faso, Mali, Senegal and Mauritania in the Sahel average around 29 degrees Celsius over
+  the year. Greenland averages below -18, and Canada and Russia are below zero because so much of
+  their land is Arctic. Latitude, altitude and the oceans explain the map.
+source:
+  name: samayo/country-json
+  url: https://github.com/samayo/country-json
+  licence: MIT
+  path: samayo-temperature.csv
+  iso_column: iso_code
+  value_column: temperature

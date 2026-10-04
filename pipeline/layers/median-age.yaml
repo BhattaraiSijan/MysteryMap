@@ -1,0 +1,19 @@
+id: median-age
+name: Median age
+definition: Age that splits the population into an older and a younger half
+unit: Years of age.
+year: "2020"
+family: people
+status: live
+explanation: >
+  Japan, Italy and Germany have median ages above 46 after decades of small families and long
+  lives. Niger, Mali, Uganda and Chad are below 17, because large families keep most of the
+  population young. Europe and East Asia are old, Africa is young, and the Americas and the rest
+  of Asia fall between.
+source:
+  name: Our World in Data
+  url: https://github.com/owid/covid-19-data
+  licence: CC BY 4.0
+  path: owid-covid-latest.csv
+  iso_column: iso_code
+  value_column: median_age

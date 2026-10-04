@@ -1,0 +1,21 @@
+id: cement-co2
+name: Carbon dioxide from cement
+definition: Carbon dioxide released by making cement, per person a year
+unit: Tonnes a person a year.
+year: "2022"
+family: emissions
+status: live
+explanation: >
+  Saudi Arabia, Qatar, Cyprus, Laos, the United Arab Emirates and Oman release the most cement
+  carbon per person, through building booms and export plants. Many small islands and Afghanistan
+  make no cement at all. China and Vietnam are high among large countries, while most of Africa is
+  low.
+source:
+  name: Our World in Data (Global Carbon Project)
+  url: https://github.com/owid/co2-data
+  licence: CC BY 4.0
+  path: owid-co2.csv
+  iso_column: iso_code
+  value_column: cement_co2_per_capita
+  year_column: year
+  year: 2022

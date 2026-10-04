@@ -1,0 +1,19 @@
+id: life-expectancy
+name: Life expectancy
+definition: Years a newborn is expected to live
+unit: Years of life.
+year: "2019"
+family: health
+status: live
+explanation: >
+  Japan, Switzerland, Hong Kong and the small states of Monaco and San Marino reach 84 to 87
+  years. The Central African Republic, Chad, Lesotho, Nigeria and Sierra Leone are in the low 50s.
+  Wealth, health care and the burden of infectious disease explain most of the gap, which is why
+  sub-Saharan Africa stands out.
+source:
+  name: Our World in Data
+  url: https://github.com/owid/covid-19-data
+  licence: CC BY 4.0
+  path: owid-covid-latest.csv
+  iso_column: iso_code
+  value_column: life_expectancy

@@ -1,0 +1,18 @@
+id: land-area
+name: Land area
+definition: Total area of the country
+unit: Square kilometres.
+year: "2023"
+family: geography
+status: live
+explanation: >
+  Russia covers about 17 million square kilometres, nearly twice as much as Canada, China or the
+  United States. Brazil and Australia follow at above 7.5 million. The Vatican, Monaco, Nauru and
+  Tuvalu are each under 30 square kilometres.
+source:
+  name: mledoze/countries
+  url: https://github.com/mledoze/countries
+  licence: ODbL 1.0
+  path: country-facts.csv
+  iso_column: iso_code
+  value_column: area_km2

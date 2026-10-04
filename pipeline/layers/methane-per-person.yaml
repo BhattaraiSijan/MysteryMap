@@ -1,0 +1,20 @@
+id: methane-per-person
+name: Methane per person
+definition: Methane emissions per person a year, in carbon dioxide equivalents
+unit: Tonnes of carbon dioxide equivalent a person a year.
+year: "2022"
+family: emissions
+status: live
+explanation: >
+  Bahrain, Mongolia, Kuwait and Qatar top the map through gas production, and Uruguay and New
+  Zealand through their large herds of cattle and sheep. Japan and small, densely built places
+  such as Macao are at the bottom. Livestock, gas fields and landfill decide the pattern.
+source:
+  name: Our World in Data (Global Carbon Project)
+  url: https://github.com/owid/co2-data
+  licence: CC BY 4.0
+  path: owid-co2.csv
+  iso_column: iso_code
+  value_column: methane_per_capita
+  year_column: year
+  year: 2022

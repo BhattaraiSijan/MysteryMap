@@ -1,0 +1,20 @@
+id: solar-electricity
+name: Solar electricity
+definition: Share of electricity from solar power
+unit: A percentage of electricity generated.
+year: "2022"
+family: electricity-mix
+status: live
+explanation: >
+  Namibia, Palestine, Lebanon and Luxembourg got more than a fifth of their electricity from the
+  sun in 2022, often because other supplies are scarce or expensive. Chile, Australia, Spain and
+  Greece are also high among larger economies. Many countries still had no solar at all.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: solar_share_elec
+  year_column: year
+  year: 2022

@@ -1,0 +1,21 @@
+id: co2-per-person
+name: Carbon dioxide per person
+definition: Carbon dioxide emitted from fossil fuels and industry per person a year
+unit: Tonnes a person a year.
+year: "2022"
+family: emissions
+status: live
+explanation: >
+  Qatar, Brunei, Kuwait, Trinidad and Tobago and Bahrain emit more than 24 tonnes per person a
+  year, driven by oil, gas and petrochemicals. The Democratic Republic of the Congo, Burundi,
+  Somalia and the Central African Republic emit under 0.1. The Gulf, North America and Australia
+  sit at the top, with most of sub-Saharan Africa at the bottom.
+source:
+  name: Our World in Data (Global Carbon Project)
+  url: https://github.com/owid/co2-data
+  licence: CC BY 4.0
+  path: owid-co2.csv
+  iso_column: iso_code
+  value_column: co2_per_capita
+  year_column: year
+  year: 2022

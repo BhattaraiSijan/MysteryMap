@@ -1,0 +1,21 @@
+id: renewable-electricity
+name: Renewable electricity
+definition: Share of electricity from renewable sources
+unit: A percentage of electricity generated.
+year: "2022"
+family: electricity-mix
+status: live
+explanation: >
+  Paraguay, Nepal, Iceland, Ethiopia and the Democratic Republic of the Congo get essentially all
+  their electricity from renewables, mostly rivers. Gulf states and many small islands run almost
+  entirely on oil and gas. Hydro-rich mountain and tropical countries score high regardless of
+  wealth.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: renewables_share_elec
+  year_column: year
+  year: 2022

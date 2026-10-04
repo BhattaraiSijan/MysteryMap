@@ -1,0 +1,18 @@
+id: diabetes
+name: Diabetes
+definition: Share of adults aged 20 to 79 with diabetes
+unit: A percentage of adults.
+year: "2017"
+family: health
+status: live
+explanation: >
+  Pacific islands such as the Marshall Islands, Tuvalu, Nauru and Kiribati have rates above 20%,
+  and the Gulf states are also high. Benin, Zimbabwe and Gambia are below 2%. Diet, obesity and
+  genetics all play a part, so the map does not simply follow wealth.
+source:
+  name: Our World in Data
+  url: https://github.com/owid/covid-19-data
+  licence: CC BY 4.0
+  path: owid-covid-latest.csv
+  iso_column: iso_code
+  value_column: diabetes_prevalence

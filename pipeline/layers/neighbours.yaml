@@ -1,0 +1,18 @@
+id: neighbours
+name: Neighbouring countries
+definition: Number of countries sharing a land border
+unit: A count of countries.
+year: "2023"
+family: geography
+status: live
+explanation: >
+  China and Russia each border 14 or more countries, and Brazil 10. Germany, the Democratic
+  Republic of the Congo and Zambia are also high. Islands have none, so the Pacific, the Caribbean
+  and Japan sit at the bottom.
+source:
+  name: mledoze/countries
+  url: https://github.com/mledoze/countries
+  licence: ODbL 1.0
+  path: country-facts.csv
+  iso_column: iso_code
+  value_column: neighbours

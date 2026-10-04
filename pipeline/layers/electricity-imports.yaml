@@ -1,0 +1,20 @@
+id: electricity-imports
+name: Electricity imports
+definition: Net electricity imports as a share of demand; negative means a net exporter
+unit: A percentage of electricity demand. Negative numbers are exports.
+year: "2022"
+family: energy
+status: live
+explanation: >
+  Laos and Paraguay export more electricity than they use at home, thanks to large dams.
+  Luxembourg, Lithuania, Macao and Palestine import most of theirs from neighbours. Most countries
+  sit near zero, either because they are islands or because they balance their own grid.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: net_elec_imports_share_demand
+  year_column: year
+  year: 2022

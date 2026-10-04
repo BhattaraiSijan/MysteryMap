@@ -1,0 +1,21 @@
+id: electricity-per-person
+name: Electricity use per person
+definition: Electricity generated per person a year
+unit: Kilowatt-hours a person a year.
+year: "2022"
+family: energy
+status: live
+explanation: >
+  Iceland generates more than 50,000 kilowatt-hours per person, mostly for aluminium smelters, and
+  Norway, Bahrain, Qatar, Kuwait and Canada are above 17,000. Chad, Somalia, Afghanistan and
+  Sierra Leone are below 25. Rich, cold or air-conditioned countries sit at the top, and much of
+  Africa at the bottom.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: per_capita_electricity
+  year_column: year
+  year: 2022

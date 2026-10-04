@@ -1,0 +1,21 @@
+id: cumulative-co2
+name: Carbon dioxide since 1750
+definition: All carbon dioxide emitted from fossil fuels and industry since 1750
+unit: Millions of tonnes, added up over all years.
+year: "2022"
+family: emissions
+status: live
+explanation: >
+  The United States has emitted about 425 billion tonnes since 1750, China about 260 billion, and
+  Russia, Germany, the United Kingdom and Japan 65 to 120 billion each. Early industrialisers rank
+  far higher than their current yearly emissions suggest. Small islands have emitted almost
+  nothing.
+source:
+  name: Our World in Data (Global Carbon Project)
+  url: https://github.com/owid/co2-data
+  licence: CC BY 4.0
+  path: owid-co2.csv
+  iso_column: iso_code
+  value_column: cumulative_co2
+  year_column: year
+  year: 2022

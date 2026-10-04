@@ -1,0 +1,19 @@
+id: over-65
+name: People aged 65 and over
+definition: Share of the population aged 65 years or older
+unit: A percentage of all people.
+year: "2015"
+family: people
+status: live
+explanation: >
+  More than a quarter of Japan's people are 65 or older, and Italy, Portugal, Germany and Finland
+  are above a fifth. The Gulf states are lowest of all, below 2.5%, because most residents are
+  working-age migrants. Sub-Saharan Africa is also low, with large young generations and shorter
+  lives.
+source:
+  name: Our World in Data
+  url: https://github.com/owid/covid-19-data
+  licence: CC BY 4.0
+  path: owid-covid-latest.csv
+  iso_column: iso_code
+  value_column: aged_65_older

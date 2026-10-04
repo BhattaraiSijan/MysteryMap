@@ -1,0 +1,17 @@
+id: official-languages
+name: Official languages
+definition: Number of official languages
+unit: A count of languages.
+year: "2023"
+family: geography
+status: live
+explanation: >
+  Zimbabwe recognises more than a dozen official languages, South Africa 11 and Namibia 9. Switzerland, Singapore
+  and Bolivia also have several. Most countries have just one, so the high groups are small.
+source:
+  name: mledoze/countries
+  url: https://github.com/mledoze/countries
+  licence: ODbL 1.0
+  path: country-facts.csv
+  iso_column: iso_code
+  value_column: official_languages

@@ -1,0 +1,19 @@
+id: population-density
+name: Population density
+definition: People per square kilometre of land
+unit: A count of people for every square kilometre.
+year: "2020"
+family: people
+status: live
+explanation: >
+  Monaco, Singapore and Hong Kong pack several thousand people into each square kilometre.
+  Bangladesh is the most crowded large country, while Greenland, Mongolia, Namibia and Australia
+  have fewer than four people per square kilometre. Western Europe and South and East Asia sit in
+  the upper groups, and big dry or cold countries sit at the bottom.
+source:
+  name: Our World in Data
+  url: https://github.com/owid/covid-19-data
+  licence: CC BY 4.0
+  path: owid-covid-latest.csv
+  iso_column: iso_code
+  value_column: population_density

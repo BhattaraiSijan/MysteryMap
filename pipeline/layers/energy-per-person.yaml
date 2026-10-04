@@ -1,0 +1,21 @@
+id: energy-per-person
+name: Energy use per person
+definition: Primary energy used per person a year
+unit: Kilowatt-hours a person a year.
+year: "2022"
+family: energy
+status: live
+explanation: >
+  Qatar, Iceland, Bahrain and Singapore each use more than 150,000 kilowatt-hours per person a
+  year, from gas-rich industry, aluminium smelting on cheap power, or refining. Somalia, Burundi
+  and the Central African Republic use under 300. Cold climates, heavy industry and wealth all
+  push a country up.
+source:
+  name: Our World in Data (Energy Institute, Ember)
+  url: https://github.com/owid/energy-data
+  licence: CC BY 4.0
+  path: owid-energy.csv
+  iso_column: iso_code
+  value_column: energy_per_capita
+  year_column: year
+  year: 2022
