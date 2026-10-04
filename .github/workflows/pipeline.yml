@@ -1,6 +1,7 @@
 name: pipeline
 
 on:
+  workflow_dispatch:
   push:
     paths: ["pipeline/**", ".github/workflows/pipeline.yml"]
   pull_request:
