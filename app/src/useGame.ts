@@ -12,6 +12,8 @@ export type Game = {
   recovered: boolean;
   /** Applies the action, records history on a solve, writes the save. */
   act: (layerId: string, action: Action) => Result;
+  /** Starts a fresh attempt at a layer. History, and the best score in it, is kept. */
+  restart: (layerId: string) => void;
   setView: (view: "flat" | "globe") => void;
 };
 
@@ -43,20 +45,33 @@ export function useGame(data: { catalog: Catalog; countries: Country[] }, store:
       if (!result.ok) return result;
       const next: Save = { ...save, rounds: { ...save.rounds, [layerId]: result.state } };
       if (result.state.status === "solved" && current.status !== "solved") {
+        const previous = save.history[layerId];
+        const points = result.state.points;
+        const best = !previous || points > previous.points;
         next.history = {
           ...save.history,
           [layerId]: {
             layerId,
             name: layer.name,
-            points: result.state.points,
-            extremes: result.state.extremesBought,
-            unit: result.state.unitBought,
-            numbers: result.state.numbersBought.length,
+            points: best ? points : previous.points,
+            extremes: best ? result.state.extremesBought : previous.extremes,
+            unit: best ? result.state.unitBought : previous.unit,
+            numbers: best ? result.state.numbersBought.length : previous.numbers,
+            lastPoints: points,
+            attempts: (previous?.attempts ?? (previous ? 1 : 0)) + 1,
           },
         };
       }
       commit(next);
       return result;
+    },
+    [save, layersById, commit],
+  );
+
+  const restart = useCallback(
+    (layerId: string) => {
+      if (!layersById.has(layerId)) return;
+      commit({ ...save, rounds: { ...save.rounds, [layerId]: newRound(layerId) } });
     },
     [save, layersById, commit],
   );
@@ -68,5 +83,5 @@ export function useGame(data: { catalog: Catalog; countries: Country[] }, store:
     [save, commit],
   );
 
-  return { catalog, countries, save, persistent, recovered: initial.recovered, act, setView };
+  return { catalog, countries, save, persistent, recovered: initial.recovered, act, restart, setView };
 }

@@ -18,7 +18,9 @@ test("a solve writes history and the save", () => {
   act(() => {
     result.current.act("beds", { type: "guess", optionId: "beds" });
   });
-  expect(result.current.save.history.beds).toEqual({ layerId: "beds", name: "Hospital beds", points: 9, extremes: false, unit: false, numbers: 1 });
+  expect(result.current.save.history.beds).toEqual({
+    layerId: "beds", name: "Hospital beds", points: 9, extremes: false, unit: false, numbers: 1, lastPoints: 9, attempts: 1,
+  });
   expect(JSON.parse(store.getItem(SAVE_KEY)!).rounds.beds.status).toBe("solved");
   expect(result.current.persistent).toBe(true);
 });
@@ -60,4 +62,34 @@ test("refusals do not write", () => {
   });
   expect(r).toEqual({ ok: false, reason: "noData" });
   expect(result.current.persistent).toBe(true);
+});
+
+test("a re-attempt keeps the best score and counts attempts", () => {
+  const store = fakeStore();
+  const { result } = renderHook(() => useGame(fixtureData, store));
+  act(() => {
+    result.current.act("beds", { type: "buyUnit" });
+  });
+  act(() => {
+    result.current.act("beds", { type: "guess", optionId: "beds" });
+  });
+  expect(result.current.save.history.beds).toMatchObject({ points: 7, unit: true, lastPoints: 7, attempts: 1 });
+
+  act(() => result.current.restart("beds"));
+  expect(result.current.save.rounds.beds).toMatchObject({ points: 10, status: "playing" });
+  expect(result.current.save.history.beds.points).toBe(7);
+
+  act(() => {
+    result.current.act("beds", { type: "guess", optionId: "age" });
+  });
+  act(() => {
+    result.current.act("beds", { type: "guess", optionId: "beds" });
+  });
+  expect(result.current.save.history.beds).toMatchObject({ points: 7, unit: true, lastPoints: 7, attempts: 2 });
+
+  act(() => result.current.restart("beds"));
+  act(() => {
+    result.current.act("beds", { type: "guess", optionId: "beds" });
+  });
+  expect(result.current.save.history.beds).toMatchObject({ points: 10, unit: false, lastPoints: 10, attempts: 3 });
 });

@@ -222,6 +222,29 @@ main {
   background: var(--secondary-soft);
 }
 
+.previous-best {
+  margin: -4px 0 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.map-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.map-nav button {
+  flex: 1;
+  border-color: var(--primary);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
 .library-number {
   flex: none;
   width: 38px;

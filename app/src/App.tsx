@@ -26,7 +26,15 @@ function Game({ data }: { data: Data }) {
   const [openId, setOpenId] = useState<string | null>(null);
   const [recoveredDismissed, setRecoveredDismissed] = useState(false);
   const [blockedDismissed, setBlockedDismissed] = useState(false);
-  const layer = openId ? data.catalog.layers.find((l) => l.id === openId) : undefined;
+  const ordered = useMemo(() => [...data.catalog.layers].sort((a, b) => a.number - b.number), [data.catalog]);
+  const index = openId ? ordered.findIndex((l) => l.id === openId) : -1;
+  const layer = index >= 0 ? ordered[index] : undefined;
+
+  /** Opens a map. A map already solved starts a fresh attempt; the best score stays in history. */
+  const open = (id: string) => {
+    if (game.save.rounds[id]?.status === "solved") game.restart(id);
+    setOpenId(id);
+  };
 
   return (
     <>
@@ -41,9 +49,16 @@ function Game({ data }: { data: Data }) {
         <Notice tone="warning" text="This browser is not saving progress. You can still play." onDismiss={() => setBlockedDismissed(true)} />
       )}
       {layer ? (
-        <Round key={layer.id} game={game} layer={layer} onBack={() => setOpenId(null)} />
+        <Round
+          key={layer.id}
+          game={game}
+          layer={layer}
+          onBack={() => setOpenId(null)}
+          onPrev={index > 0 ? () => open(ordered[index - 1].id) : null}
+          onNext={index < ordered.length - 1 ? () => open(ordered[index + 1].id) : null}
+        />
       ) : (
-        <Library catalog={data.catalog} save={game.save} onOpen={setOpenId} />
+        <Library catalog={data.catalog} save={game.save} onOpen={open} />
       )}
     </>
   );

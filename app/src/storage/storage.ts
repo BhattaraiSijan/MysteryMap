@@ -8,10 +8,14 @@ export const BACKUP_KEY = "mystery-map.save.backup";
 export type HistoryEntry = {
   layerId: string;
   name: string;
+  /** Best score across attempts. */
   points: number;
   extremes: boolean;
   unit: boolean;
   numbers: number;
+  /** Score of the most recent attempt; absent in saves written before re-attempts existed. */
+  lastPoints?: number;
+  attempts?: number;
 };
 
 export type Save = {
@@ -52,7 +56,9 @@ function isHistory(x: unknown): x is HistoryEntry {
     typeof x.points === "number" &&
     typeof x.extremes === "boolean" &&
     typeof x.unit === "boolean" &&
-    typeof x.numbers === "number"
+    typeof x.numbers === "number" &&
+    (x.lastPoints === undefined || typeof x.lastPoints === "number") &&
+    (x.attempts === undefined || typeof x.attempts === "number")
   );
 }
 

@@ -50,11 +50,21 @@ test("a full round, then a reload", async ({ page }) => {
   await expect(page.getByText("2 of 10 points")).toBeVisible();
   await expect(page.getByText("Map 2")).toBeVisible();
 
-  // A solved round reopened from the library shows the reveal directly.
+  // A solved map reopened from the library is a fresh attempt: no reveal, the best score shown.
   await page.getByText("Hospital beds").click();
-  await expect(page.getByRole("heading", { name: "It shows Hospital beds." })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "It shows Hospital beds." })).toHaveCount(0);
+  await expect(page.getByText("Your best so far: 2 of 10 points", { exact: false })).toBeVisible();
+  await expect(page.getByText("Points 10")).toBeVisible();
   await pickCountry(page, "Japan");
-  await expect(page.getByText("Japan: 13.05 (Beds per 1,000 people)")).toBeVisible();
+  await expect(page.getByText("Japan: highest group")).toBeVisible();
+  await expect(page.getByText("13.05")).toHaveCount(0);
+
+  // Next and previous move through the maps by number.
+  await page.getByRole("button", { name: "Next map →" }).click();
+  await expect(page.getByRole("heading", { name: "Map 2" })).toBeVisible();
+  await page.getByRole("button", { name: "← Previous map" }).click();
+  await expect(page.getByRole("heading", { name: "Map 1" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "← Previous map" })).toBeDisabled();
 });
 
 test("switching view mid-round keeps the round", async ({ page }) => {

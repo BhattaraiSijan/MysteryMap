@@ -1,5 +1,6 @@
 import type { Catalog } from "../catalog/types";
 import type { Save } from "../storage/storage";
+import { scoreColors } from "../components/score";
 
 export type LibraryProps = {
   catalog: Catalog;
@@ -21,17 +22,27 @@ export function Library({ catalog, save, onOpen }: LibraryProps) {
       <ul className="library-list">
         {layers.map((layer) => {
           const done = save.history[layer.id];
-          const started = !done && save.rounds[layer.id];
+          const round = save.rounds[layer.id];
+          const started = !done && round && round.status === "playing" && round.points < 10;
+          const colors = done ? scoreColors(done.points) : null;
           return (
             <li key={layer.id}>
-              <button type="button" className={`library-item${done ? " solved" : ""}`} onClick={() => onOpen(layer.id)}>
-                <span className="library-number" aria-hidden="true">
+              <button
+                type="button"
+                className={`library-item${done ? " solved" : ""}`}
+                style={colors ? { background: colors.background } : undefined}
+                onClick={() => onOpen(layer.id)}
+              >
+                <span className="library-number" aria-hidden="true" style={colors ? { background: colors.accent } : undefined}>
                   {layer.number}
                 </span>
                 {done ? (
                   <span className="library-text">
                     <span className="library-name">{layer.name}</span>
-                    <span className="library-score">{done.points} of 10 points</span>
+                    <span className="library-score">
+                      {done.points} of 10 points
+                      {(done.attempts ?? 1) > 1 ? ` · best of ${done.attempts}` : ""}
+                    </span>
                   </span>
                 ) : (
                   <span className="library-text">

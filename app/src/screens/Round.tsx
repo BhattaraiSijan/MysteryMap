@@ -18,14 +18,17 @@ export type RoundProps = {
   game: Game;
   layer: Layer;
   onBack: () => void;
+  onPrev: (() => void) | null;
+  onNext: (() => void) | null;
 };
 
-export function Round({ game, layer, onBack }: RoundProps) {
+export function Round({ game, layer, onBack, onPrev, onNext }: RoundProps) {
   const { catalog, countries, save, act, setView } = game;
   const state = save.rounds[layer.id] ?? newRound(layer.id);
   const options = useMemo(() => optionsFor(layer, catalog), [layer, catalog]);
   const shown = useMemo(() => visible(state, layer, options), [state, layer, options]);
   const solved = state.status === "solved";
+  const previous = save.history[layer.id];
 
   const [selected, setSelected] = useState<string | null>(null);
   const [numberArmed, setNumberArmed] = useState(false);
@@ -83,6 +86,12 @@ export function Round({ game, layer, onBack }: RoundProps) {
           Points {state.points}
         </p>
       </div>
+      {previous && !solved && (
+        <p className="previous-best">
+          Your best so far: {previous.points} of 10 points
+          {(previous.attempts ?? 1) > 1 ? ` in ${previous.attempts} attempts` : ""}. This is a fresh attempt.
+        </p>
+      )}
 
       <div className="round-grid">
         <div className="map-column">
@@ -132,6 +141,15 @@ export function Round({ game, layer, onBack }: RoundProps) {
           )}
         </div>
       </div>
+
+      <nav className="map-nav" aria-label="Other maps">
+        <button type="button" onClick={onPrev ?? undefined} disabled={!onPrev}>
+          ← Previous map
+        </button>
+        <button type="button" onClick={onNext ?? undefined} disabled={!onNext}>
+          Next map →
+        </button>
+      </nav>
     </section>
   );
 }
