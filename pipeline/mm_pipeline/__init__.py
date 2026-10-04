@@ -1,0 +1,1 @@
+"""Mystery Map catalog pipeline."""

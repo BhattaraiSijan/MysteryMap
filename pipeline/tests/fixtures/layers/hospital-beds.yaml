@@ -1,0 +1,17 @@
+id: hospital-beds
+name: Hospital beds
+definition: Beds per 1,000 people
+unit: A count for every 1,000 people.
+year: 2010 to 2020
+family: health-capacity
+status: live
+explanation: >
+  Japan has about 13 beds per 1,000 people and Mali about 0.1.
+  Former Soviet countries built health systems around large hospitals.
+source:
+  name: Our World in Data
+  url: https://ourworldindata.org
+  licence: CC BY 4.0
+  path: owid-latest.csv
+  iso_column: iso_code
+  value_column: hospital_beds_per_thousand
