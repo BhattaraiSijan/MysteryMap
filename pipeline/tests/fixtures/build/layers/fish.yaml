@@ -1,0 +1,16 @@
+id: fish
+name: Fish eaten
+definition: Kilograms of fish eaten per person a year
+unit: Kilograms a person a year.
+year: 2020
+family: food
+status: live
+explanation: >
+  Fixture layer Fish eaten. It exists only for the tests.
+source:
+  name: Fixture
+  url: https://example.com
+  licence: CC0
+  path: fixture.csv
+  iso_column: iso_code
+  value_column: fish

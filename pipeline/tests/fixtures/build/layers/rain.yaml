@@ -1,0 +1,16 @@
+id: rain
+name: Rainfall
+definition: Average yearly rainfall in millimetres
+unit: Millimetres of water a year.
+year: 2020
+family: climate
+status: live
+explanation: >
+  Fixture layer Rainfall. It exists only for the tests.
+source:
+  name: Fixture
+  url: https://example.com
+  licence: CC0
+  path: fixture.csv
+  iso_column: iso_code
+  value_column: rain

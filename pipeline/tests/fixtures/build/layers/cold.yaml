@@ -1,0 +1,16 @@
+id: cold
+name: Cold days
+definition: Days a year below freezing in the capital
+unit: A count of days a year.
+year: 2020
+family: weather
+status: live
+explanation: >
+  Fixture layer Cold days. It exists only for the tests.
+source:
+  name: Fixture
+  url: https://example.com
+  licence: CC0
+  path: fixture.csv
+  iso_column: iso_code
+  value_column: cold

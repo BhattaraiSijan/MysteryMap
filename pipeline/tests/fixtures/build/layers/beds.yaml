@@ -1,0 +1,16 @@
+id: beds
+name: Hospital beds
+definition: Beds per 1,000 people
+unit: A count for every 1,000 people.
+year: 2020
+family: health
+status: live
+explanation: >
+  Fixture layer Hospital beds. It exists only for the tests.
+source:
+  name: Fixture
+  url: https://example.com
+  licence: CC0
+  path: fixture.csv
+  iso_column: iso_code
+  value_column: beds

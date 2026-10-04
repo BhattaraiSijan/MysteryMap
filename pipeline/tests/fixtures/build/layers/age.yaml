@@ -1,0 +1,16 @@
+id: age
+name: Median age
+definition: Median age of the population in years
+unit: Years of age.
+year: 2020
+family: people
+status: live
+explanation: >
+  Fixture layer Median age. It exists only for the tests.
+source:
+  name: Fixture
+  url: https://example.com
+  licence: CC0
+  path: fixture.csv
+  iso_column: iso_code
+  value_column: age

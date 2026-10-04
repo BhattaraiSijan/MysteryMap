@@ -30,3 +30,45 @@ def tmp_layer(tmp_path):
         return path
 
     return make
+
+
+class BuildCase:
+    """A temporary layers dir plus a data dir holding the fixture CSV and the real Natural Earth file."""
+
+    def __init__(self, tmp_path, layer_ids):
+        root = tmp_path / "-".join(layer_ids)
+        self.layers = root / "layers"
+        self.layers.mkdir(parents=True)
+        self.data = root / "data"
+        self.data.mkdir()
+        (self.data / "fixture.csv").write_bytes((FIXTURES / "build" / "data" / "fixture.csv").read_bytes())
+        (self.data / "ne_50m_admin_0_countries.geojson").symlink_to(REPO_DATA / "ne_50m_admin_0_countries.geojson")
+        for lid in layer_ids:
+            src = FIXTURES / "build" / "layers" / f"{lid}.yaml"
+            (self.layers / src.name).write_text(src.read_text())
+
+
+SEVEN = ["beds", "age", "rain", "cars", "fish", "rail", "cold"]
+
+
+@pytest.fixture
+def seven(tmp_path):
+    return BuildCase(tmp_path, SEVEN)
+
+
+@pytest.fixture
+def seven_plus_draft(tmp_path):
+    return BuildCase(tmp_path, SEVEN + ["draft-one"])
+
+
+@pytest.fixture
+def seven_with_thin_layer(tmp_path):
+    return BuildCase(tmp_path, SEVEN + ["thin"])
+
+
+@pytest.fixture
+def seven_plus_thin_draft(tmp_path):
+    case = BuildCase(tmp_path, SEVEN + ["thin"])
+    path = case.layers / "thin.yaml"
+    path.write_text(path.read_text().replace("status: live", "status: draft"))
+    return case

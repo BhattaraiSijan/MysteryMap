@@ -1,0 +1,16 @@
+id: rail
+name: Railway length
+definition: Kilometres of railway per 1,000 square kilometres
+unit: Kilometres for every 1,000 square kilometres.
+year: 2020
+family: infrastructure
+status: live
+explanation: >
+  Fixture layer Railway length. It exists only for the tests.
+source:
+  name: Fixture
+  url: https://example.com
+  licence: CC0
+  path: fixture.csv
+  iso_column: iso_code
+  value_column: rail

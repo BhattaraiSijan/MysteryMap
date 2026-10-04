@@ -1,0 +1,16 @@
+id: thin
+name: Thin layer
+definition: A measure with thin coverage
+unit: A thin unit.
+year: 2020
+family: thin
+status: live
+explanation: >
+  Fixture layer Thin layer. It exists only for the tests.
+source:
+  name: Fixture
+  url: https://example.com
+  licence: CC0
+  path: fixture.csv
+  iso_column: iso_code
+  value_column: thin
