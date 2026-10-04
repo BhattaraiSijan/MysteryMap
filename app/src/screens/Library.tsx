@@ -38,7 +38,7 @@ export function Library({ catalog, save, onOpen }: LibraryProps) {
                 </span>
                 {done ? (
                   <span className="library-text">
-                    <span className="library-name">{layer.name}</span>
+                    <span className="library-name">Map {layer.number}</span>
                     <span className="library-score">
                       {done.points} of 10 points
                       {(done.attempts ?? 1) > 1 ? ` · best of ${done.attempts}` : ""}

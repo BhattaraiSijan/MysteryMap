@@ -46,12 +46,12 @@ test("a full round, then a reload", async ({ page }) => {
   await expect(page.getByText("Points 2")).toBeVisible();
 
   await page.reload();
-  await expect(page.getByText("Hospital beds")).toBeVisible();
+  await expect(page.getByText("Hospital beds")).toHaveCount(0); // the library never names a map
   await expect(page.getByText("2 of 10 points")).toBeVisible();
   await expect(page.getByText("Map 2")).toBeVisible();
 
   // A solved map reopened from the library is a fresh attempt: no reveal, the best score shown.
-  await page.getByText("Hospital beds").click();
+  await page.getByText("Map 1").click();
   await expect(page.getByRole("heading", { name: "It shows Hospital beds." })).toHaveCount(0);
   await expect(page.getByText("Your best so far: 2 of 10 points", { exact: false })).toBeVisible();
   await expect(page.getByText("Points 10")).toBeVisible();
