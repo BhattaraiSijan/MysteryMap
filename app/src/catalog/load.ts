@@ -112,7 +112,7 @@ export function parseCountries(raw: unknown): Country[] {
     if (!isRecord(geometry) || (geometry.type !== "Polygon" && geometry.type !== "MultiPolygon")) {
       fail(`country ${code}`, "geometry must be a Polygon or MultiPolygon");
     }
-    return { code, iso, name: str(c, "name", `country ${code}`), geometry: geometry as Country["geometry"] };
+    return { code, iso, name: str(c, "name", `country ${code}`), geometry: geometry as unknown as Country["geometry"] };
   });
 }
 
