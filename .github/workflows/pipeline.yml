@@ -1,0 +1,20 @@
+name: pipeline
+
+on:
+  push:
+    paths: ["pipeline/**", ".github/workflows/pipeline.yml"]
+  pull_request:
+    paths: ["pipeline/**", ".github/workflows/pipeline.yml"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -e "pipeline[dev]"
+      - run: pytest pipeline
+      - run: python -m mm_pipeline.build --layers layers --data data --out /tmp/out --check
+        working-directory: pipeline
