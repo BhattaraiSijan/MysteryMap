@@ -1,4 +1,6 @@
+import { useId, useState } from "react";
 import type { OptionInfo } from "../engine/options";
+import { HINT_HELP } from "./Hints";
 
 export type OptionsProps = {
   options: (OptionInfo & { struck: boolean })[];
@@ -9,9 +11,28 @@ export type OptionsProps = {
 };
 
 export function Options({ options, disabled, answerId, message, onGuess }: OptionsProps) {
+  const [helpOpen, setHelpOpen] = useState(false);
+  const helpId = useId();
   return (
     <section className="options" aria-labelledby="options-heading">
-      <h2 id="options-heading">What does the map show?</h2>
+      <div className="card-head">
+        <h2 id="options-heading">What does the map show?</h2>
+        <button
+          type="button"
+          className="info"
+          aria-label="How guessing works"
+          aria-expanded={helpOpen}
+          aria-controls={helpId}
+          onClick={() => setHelpOpen((v) => !v)}
+        >
+          i
+        </button>
+      </div>
+      {helpOpen && (
+        <p id={helpId} className="hint-help">
+          {HINT_HELP.guess} One of the six is the answer; the other five are real maps too.
+        </p>
+      )}
       <ul className="option-list">
         {options.map((o) => (
           <li key={o.id}>

@@ -488,6 +488,54 @@ main {
   margin-bottom: 16px;
 }
 
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.info {
+  flex: none;
+  min-height: 0;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  color: var(--primary-dark);
+  background: var(--card);
+  font: italic 700 14px/1 Georgia, "Times New Roman", serif;
+  display: grid;
+  place-items: center;
+}
+
+.info[aria-expanded="true"] {
+  background: var(--primary);
+  color: #fff;
+}
+
+.hint-help {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--primary-soft);
+  font-size: 0.9rem;
+}
+
+.hint-help dt {
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.hint-help dt:first-child {
+  margin-top: 0;
+}
+
+.hint-help dd {
+  margin: 0;
+}
+
 .hint-buttons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
