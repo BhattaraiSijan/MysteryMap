@@ -32,6 +32,7 @@ export function Round({ game, layer, onBack, onPrev, onNext }: RoundProps) {
 
   const [selected, setSelected] = useState<string | null>(null);
   const [numberArmed, setNumberArmed] = useState(false);
+  const [labels, setLabels] = useState(true);
   const [hintMessage, setHintMessage] = useState<string | null>(null);
   const [guessMessage, setGuessMessage] = useState<string | null>(null);
 
@@ -95,13 +96,19 @@ export function Round({ game, layer, onBack, onPrev, onNext }: RoundProps) {
 
       <div className="round-grid">
         <div className="map-column">
-          {GLOBE_ENABLED && <ViewSwitch view={view} onChange={setView} />}
+          <div className="map-controls">
+            {GLOBE_ENABLED && <ViewSwitch view={view} onChange={setView} />}
+            <button type="button" className="labels-toggle" aria-pressed={labels} onClick={() => setLabels((v) => !v)}>
+              Names {labels ? "on" : "off"}
+            </button>
+          </div>
           <div className="map-frame">
             <MapView
               countries={countries}
               groups={shown.groups}
               selected={selected}
               view={view}
+              labels={labels}
               onPick={pick}
               onGlobeFailed={() => setView("flat")}
             />

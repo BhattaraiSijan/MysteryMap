@@ -50,3 +50,13 @@ test("size separates small from large", () => {
   expect(size("PSE")).toBeLessThan(8);
   expect(size("COD")).toBeGreaterThan(8);
 });
+
+test("a name sits on the main landmass, not between far-flung islands", () => {
+  const fra = flat.find((c) => c.code === "FRA")!;
+  // Metropolitan France is north of its bounding-box centre, which French Guiana drags south.
+  expect(fra.labelAt[1]).toBeLessThan(fra.centre[1]);
+  expect(fra.labelSize).toBeLessThan(fra.size);
+  const fji = flat.find((c) => c.code === "FJI")!;
+  // Fiji crosses the date line; its label stays near one edge rather than mid-Atlantic.
+  expect(Math.abs(fji.labelAt[0] - FLAT_WIDTH / 2)).toBeGreaterThan(300);
+});
