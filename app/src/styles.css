@@ -99,6 +99,68 @@ a {
   padding: 14px 16px;
 }
 
+.app-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.how-button {
+  min-height: 36px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1.5px solid rgb(255 255 255 / 0.8);
+  background: rgb(255 255 255 / 0.12);
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.how-button[aria-expanded="true"],
+.how-button:hover {
+  background: #fff;
+  color: var(--primary-dark);
+}
+
+.how-to-play {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-top: 5px solid var(--primary);
+  padding: 14px 16px 16px;
+  margin-bottom: 16px;
+}
+
+.how-to-play h2 {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+}
+
+.how-steps {
+  margin: 10px 0 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 8px;
+}
+
+.how-steps li::marker {
+  color: var(--secondary-dark);
+  font-weight: 700;
+}
+
+.how-steps em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.how-footer {
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .app-header h1 {
   font-size: 1.35rem;
   display: flex;
@@ -168,6 +230,7 @@ main {
   border-color: var(--error);
 }
 
+.how-to-play .dismiss,
 .notice .dismiss {
   min-height: 36px;
   min-width: 36px;

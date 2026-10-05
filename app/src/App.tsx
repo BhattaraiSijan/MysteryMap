@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { CatalogTooNewError, loadData } from "./catalog/load";
 import type { Catalog, Country } from "./catalog/types";
 import { hasWebGL } from "./map/webgl";
+import { HowToPlay } from "./screens/HowToPlay";
 import { Library } from "./screens/Library";
 import { Notice } from "./screens/Notice";
 import { Round } from "./screens/Round";
@@ -11,6 +12,23 @@ type Data = { catalog: Catalog; countries: Country[] };
 type LoadState = { status: "loading" } | { status: "failed"; tooNew: boolean } | { status: "ready"; data: Data };
 
 export const DATA_URL = "./data";
+const INTRO_SEEN_KEY = "mystery-map.intro-seen";
+
+function introSeen(): boolean {
+  try {
+    return window.localStorage.getItem(INTRO_SEEN_KEY) === "1";
+  } catch {
+    return true;
+  }
+}
+
+function markIntroSeen(): void {
+  try {
+    window.localStorage.setItem(INTRO_SEEN_KEY, "1");
+  } catch {
+    // A browser that blocks storage simply shows the intro again next time.
+  }
+}
 
 function browserStore(): Storage | null {
   try {
@@ -67,6 +85,13 @@ function Game({ data }: { data: Data }) {
 export function App() {
   const [webgl] = useState(hasWebGL);
   const [load, setLoad] = useState<LoadState>({ status: "loading" });
+  const [firstVisit, setFirstVisit] = useState(() => !introSeen());
+  const [howOpen, setHowOpen] = useState(firstVisit);
+  const closeHow = () => {
+    markIntroSeen();
+    setFirstVisit(false);
+    setHowOpen(false);
+  };
 
   const fetchData = useCallback(async () => {
     setLoad({ status: "loading" });
@@ -98,13 +123,21 @@ export function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>
-          <span className="logo" aria-hidden="true" />
-          Mystery Map
-        </h1>
-        <p className="tagline">One unlabeled map. Work out what it shows.</p>
+        <div className="app-header-row">
+          <h1>
+            <span className="logo" aria-hidden="true" />
+            Mystery Map
+          </h1>
+          <button type="button" className="how-button" aria-expanded={howOpen} onClick={() => (howOpen ? closeHow() : setHowOpen(true))}>
+            How to play
+          </button>
+        </div>
+        <p className="tagline">Can you guess what the unlabeled map shows? Use hints if you feel stuck.</p>
       </header>
-      <main>{body}</main>
+      <main>
+        {howOpen && load.status === "ready" && <HowToPlay onClose={closeHow} firstVisit={firstVisit} />}
+        {body}
+      </main>
       <footer className="app-footer">
         <p>Borders from Natural Earth. Each map names its data source once you solve it.</p>
       </footer>

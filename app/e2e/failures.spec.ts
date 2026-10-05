@@ -1,8 +1,30 @@
 import { expect, test } from "@playwright/test";
-import { fixtureCatalog, fixtureCountries } from "./fixtures";
+import { fixtureCatalog, fixtureCountries, skipIntro } from "./fixtures";
 
 test.beforeEach(async ({ page }) => {
   await page.route("**/data/countries.json", (route) => route.fulfill({ json: { version: 1, countries: fixtureCountries } }));
+  await skipIntro(page);
+});
+
+test("the first visit explains how to play, and the header reopens it", async ({ page }) => {
+  await page.route("**/data/catalog.json", (r) => r.fulfill({ json: fixtureCatalog }));
+  await page.addInitScript(() => {
+    // Forget the intro once, so the reload below behaves like a returning visitor.
+    if (!sessionStorage.getItem("intro-cleared")) {
+      localStorage.removeItem("mystery-map.intro-seen");
+      sessionStorage.setItem("intro-cleared", "1");
+    }
+  });
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Welcome. Here is how to play." })).toBeVisible();
+  await page.getByRole("button", { name: "Start playing" }).click();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await page.reload();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await page.getByRole("button", { name: "How to play" }).click();
+  await expect(page.getByRole("heading", { name: "How to play" })).toBeVisible();
+  await page.getByRole("button", { name: "Got it" }).click();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
 });
 
 test("catalog fails, then retry works", async ({ page }) => {

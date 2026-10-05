@@ -8,6 +8,12 @@ export { fixtureCatalog, fixtureCountries };
 export async function useFixtureData(page: Page) {
   await page.route("**/data/catalog.json", (route) => route.fulfill({ json: fixtureCatalog }));
   await page.route("**/data/countries.json", (route) => route.fulfill({ json: { version: 1, countries: fixtureCountries } }));
+  await skipIntro(page);
+}
+
+/** Marks the how-to-play intro as seen, so tests land straight on the library. */
+export async function skipIntro(page: Page) {
+  await page.addInitScript(() => localStorage.setItem("mystery-map.intro-seen", "1"));
 }
 
 /** Fills the "Find a country" combobox and chooses the match. */
