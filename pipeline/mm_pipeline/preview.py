@@ -13,7 +13,7 @@ from .derive import extremes, groups
 from .options import wrong_options
 from .validate import validate_layer
 
-COLORS = {0: "#c8c8c8", 1: "#ffffcc", 2: "#a1dab4", 3: "#41b6c4", 4: "#2c7fb8", 5: "#253494"}
+COLORS = {0: "#c3c9cf", 1: "#86b6ef", 2: "#5598e7", 3: "#2a78d6", 4: "#1c5cab", 5: "#0d366b"}  # same as the app
 
 
 def _rings(geometry: dict):
@@ -30,8 +30,8 @@ def _svg(countries: list[Country], group_of: dict[str, int]) -> str:
             "M" + " L".join(f"{(x + 180) * 2:.1f},{(90 - y) * 2:.1f}" for x, y in ring) + " Z"
             for ring in _rings(c.geometry)
         )
-        paths.append(f'<path d="{d}" fill="{fill}" stroke="#6e787d" stroke-width="0.3"><title>{html.escape(c.name)}</title></path>')
-    return f'<svg viewBox="0 0 720 360" width="100%" style="background:#d6dee0">{"".join(paths)}</svg>'
+        paths.append(f'<path d="{d}" fill="{fill}" stroke="#ffffff" stroke-width="0.4"><title>{html.escape(c.name)}</title></path>')
+    return f'<svg viewBox="0 0 720 360" width="100%" style="background:#f8fafb">{"".join(paths)}</svg>'
 
 
 def write_previews(layers_dir: Path, data_dir: Path, out_dir: Path) -> list[Path]:

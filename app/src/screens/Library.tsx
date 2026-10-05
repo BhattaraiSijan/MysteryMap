@@ -1,6 +1,6 @@
 import type { Catalog } from "../catalog/types";
 import type { Save } from "../storage/storage";
-import { scoreColors } from "../components/score";
+import { scoreBand } from "../components/score";
 
 export type LibraryProps = {
   catalog: Catalog;
@@ -24,16 +24,17 @@ export function Library({ catalog, save, onOpen }: LibraryProps) {
           const done = save.history[layer.id];
           const round = save.rounds[layer.id];
           const started = !done && round && round.status === "playing" && round.points < 10;
-          const colors = done ? scoreColors(done.points) : null;
+          const band = done ? scoreBand(done.points) : null;
           return (
             <li key={layer.id}>
               <button
                 type="button"
                 className={`library-item${done ? " solved" : ""}`}
-                style={colors ? { background: colors.background } : undefined}
+                style={band ? { background: band.tint, borderColor: band.accent } : undefined}
+                data-score-band={band?.name}
                 onClick={() => onOpen(layer.id)}
               >
-                <span className="library-number" aria-hidden="true" style={colors ? { background: colors.accent } : undefined}>
+                <span className="library-number" aria-hidden="true" style={band ? { background: band.accent } : undefined}>
                   {layer.number}
                 </span>
                 {done ? (
@@ -42,6 +43,7 @@ export function Library({ catalog, save, onOpen }: LibraryProps) {
                     <span className="library-score">
                       {done.points} of 10 points
                       {(done.attempts ?? 1) > 1 ? ` · best of ${done.attempts}` : ""}
+                      {band ? ` · ${band.label}` : ""}
                     </span>
                   </span>
                 ) : (

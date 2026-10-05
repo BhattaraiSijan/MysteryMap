@@ -282,7 +282,8 @@ main {
 }
 
 .library-item.solved {
-  background: var(--secondary-soft);
+  border-width: 1px;
+  border-style: solid;
 }
 
 .previous-best {
@@ -427,6 +428,7 @@ main {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  border: 1px solid var(--line);
   touch-action: none;
 }
 
@@ -482,7 +484,11 @@ main {
   display: inline-block;
   width: 22px;
   height: 14px;
-  border: 1px solid rgb(0 0 0 / 0.15);
+  border: 1px solid rgb(0 0 0 / 0.12);
+}
+
+.legend-ramp .swatch + .swatch {
+  margin-left: 2px;
 }
 
 .legend-nodata {

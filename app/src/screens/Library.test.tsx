@@ -18,7 +18,7 @@ test("library never shows a layer name, solved or not, since every map can be re
   expect(screen.queryByText("Hospital beds")).toBeNull();
   expect(screen.queryByText("Median age")).toBeNull();
   expect(screen.getByText("Map 1")).toBeInTheDocument();
-  expect(screen.getByText("6 of 10 points")).toBeInTheDocument();
+  expect(screen.getByText(/^6 of 10 points/)).toBeInTheDocument();
   expect(screen.getByText("Map 2")).toBeInTheDocument();
 });
 
@@ -26,9 +26,9 @@ test("library shows the attempt count and colours the card by score", () => {
   const save = saveWithSolved("beds", 6);
   save.history.beds.attempts = 3;
   render(<Library catalog={fixtureCatalog} save={save} onOpen={() => {}} />);
-  expect(screen.getByText("6 of 10 points · best of 3")).toBeInTheDocument();
+  expect(screen.getByText("6 of 10 points · best of 3 · Good")).toBeInTheDocument();
   const card = screen.getByRole("button", { name: /Map 1/ });
-  expect(card.style.background).toContain("linear-gradient");
+  expect(card.dataset.scoreBand).toBe("warning");
 });
 
 test("choosing a map opens it", () => {
